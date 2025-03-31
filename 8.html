@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inversión de Cadena</title>
+</head>
+<body>
+    <h2>Inversión de Cadena</h2>
+    <input type="text" id="text" placeholder="Ingrese un texto">
+    <button onclick="reverseString()">Invertir</button>
+    <h3>Resultado: <span id="result"></span></h3>
+
+    <script>
+        function reverseString() {
+            let text = document.getElementById('text').value;
+            let reversedText = text.split('').reverse().join('');
+            document.getElementById('result').textContent = `Cadena invertida: ${reversedText}`;
+        }
+    </script>
+</body>
+</html>

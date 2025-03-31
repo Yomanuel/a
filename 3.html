@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Números Aleatorios</title>
+</head>
+<body>
+    <h2>Generador de Números Aleatorios</h2>
+    <input type="number" id="min" placeholder="Mínimo">
+    <input type="number" id="max" placeholder="Máximo">
+    <button onclick="generateRandomNumber()">Generar</button>
+    <h3>Resultado: <span id="result"></span></h3>
+
+    <script>
+        function generateRandomNumber() {
+            let min = parseInt(document.getElementById('min').value);
+            let max = parseInt(document.getElementById('max').value);
+            
+            if (isNaN(min) || isNaN(max) || min >= max) {
+                document.getElementById('result').textContent = 'Ingrese un rango válido';
+                return;
+            }
+            
+            let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById('result').textContent = randomNumber;
+        }
+    </script>
+</body>
+</html>

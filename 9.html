@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Elementos de un Array</title>
+</head>
+<body>
+    <h2>Suma de Elementos de un Array</h2>
+    <input type="text" id="arrayInput" placeholder="Ingrese números separados por comas">
+    <button onclick="sumArray()">Sumar</button>
+    <h3>Resultado: <span id="result"></span></h3>
+
+    <script>
+        function sumArray() {
+            let input = document.getElementById('arrayInput').value;
+            let numbers = input.split(',').map(num => parseFloat(num.trim()));
+            
+            if (numbers.some(isNaN)) {
+                document.getElementById('result').textContent = 'Ingrese solo números separados por comas';
+                return;
+            }
+            
+            let sum = numbers.reduce((acc, num) => acc + num, 0);
+            document.getElementById('result').textContent = `Suma: ${sum}`;
+        }
+    </script>
+</body>
+</html>
